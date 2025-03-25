@@ -43,37 +43,37 @@ activities = {
         "description": "Join the school soccer team and compete in matches",
         "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
         "max_participants": 22,
-        "participants": ["alex@mergington.edu", "mia@mergington.edu"]
+        "participants": ["liam@mergington.edu", "noah@mergington.edu"]
     },
     "Basketball Team": {
-        "description": "Practice basketball skills and participate in tournaments",
+        "description": "Practice basketball skills and compete in tournaments",
         "schedule": "Wednesdays and Fridays, 3:30 PM - 5:00 PM",
         "max_participants": 15,
-        "participants": ["ethan@mergington.edu", "ava@mergington.edu"]
+        "participants": ["ava@mergington.edu", "mia@mergington.edu"]
     },
     "Art Club": {
         "description": "Explore various art techniques and create your own masterpieces",
         "schedule": "Thursdays, 3:30 PM - 5:00 PM",
         "max_participants": 15,
-        "participants": ["lily@mergington.edu", "noah@mergington.edu"]
+        "participants": ["isabella@mergington.edu", "amelia@mergington.edu"]
     },
     "Drama Club": {
-        "description": "Learn acting skills and perform in school plays",
+        "description": "Participate in plays and improve acting skills",
         "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
         "max_participants": 20,
-        "participants": ["amelia@mergington.edu", "lucas@mergington.edu"]
+        "participants": ["charlotte@mergington.edu", "harper@mergington.edu"]
     },
     "Math Club": {
         "description": "Solve challenging math problems and prepare for competitions",
         "schedule": "Tuesdays, 3:30 PM - 4:30 PM",
         "max_participants": 10,
-        "participants": ["james@mergington.edu", "isabella@mergington.edu"]
+        "participants": ["benjamin@mergington.edu", "lucas@mergington.edu"]
     },
     "Science Club": {
         "description": "Conduct experiments and explore scientific concepts",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
         "max_participants": 12,
-        "participants": ["benjamin@mergington.edu", "sophia@mergington.edu"]
+        "participants": ["ella@mergington.edu", "grace@mergington.edu"]
     }
 }
 
@@ -100,7 +100,7 @@ def signup_for_activity(activity_name: str, email: str):
 
     # validate student is not already signed up
     if email in activity["participants"]:
-        raise HTTPException(status_code=409, detail=f"{email} is already signed up for {activity_name}")
+        return {"message": f"{email} is already signed up for {activity_name}"}
 
     # Add student
     activity["participants"].append(email)
